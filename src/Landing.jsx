@@ -12,6 +12,8 @@ import cube04 from "../public/assets/cube-04.png";
 import bellicon from "../public/assets/bellicon.png";
 import nickJones from "../public/assets/nickjones.png";
 
+const typeformLink = "https://xhj91lsy6tk.typeform.com/to/BlKRxRQK";
+
 const Landing = () => {
     return (
         <div className='w-screen h-fit relative overflow-hidden px-8 md:px-0'>
@@ -25,7 +27,7 @@ const Landing = () => {
                     <p className='md:text-lg text-gray-500 pt-1.5 pb-4 md:pb-2.5'>Need a doctors note for work or school? We’re here to help.  Licensed healthcare providers offering real, verifiable excuse notes for workers and students. Quick, reliable, and hassle-free.</p>
                 
                     <div className='flex flex-col md:flex-row gap-4 mb-1.5'>
-                        <button className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Get Started <img className='h-8' src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></button>
+                        <a href={typeformLink} className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Get Started <img className='h-8' src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></a>
                         <button className='py-3 px-2 rounded-xl font-medium flex items-center gap-1.5'><img className='h-8' src="https://img.icons8.com/material-rounded/50/play--v1.png" alt="Play" />View Sample</button>
                     </div>
 
@@ -154,7 +156,7 @@ const Landing = () => {
             <section className='mt-24 md:mt-40 mx-auto md:w-4/5 py-40 px-8 md:px-20 bg-black flex flex-col rounded-xl relative overflow-hidden'>
                 <h3 className='text-white text-4xl font-semibold'>Ready To Get Your Note?</h3>
                 <p className='mt-4 mb-5 md:mt-2 md:mb-3.5 text-lg text-gray-400'>Risus habitant leo egestas mauris diam eget morbi tempus vulputate.</p>
-                <button className='z-10 w-fit bg-white py-3 px-5 rounded-xl font-medium'>Get Your Doctors Note</button>
+                <a href={typeformLink} className='z-10 w-fit bg-white py-3 px-5 rounded-xl font-medium'>Get Your Doctors Note</a>
 
                 <img className='hidden md:block absolute -top-[60%] -right-[20%] h-[120%] object-cover' src={whiteCircle} alt="White circle designs" />
                 <img className='hidden md:block absolute -bottom-[75%] -left-[20%] h-[120%] object-cover' src={whiteCircle} alt="White circle designs" />

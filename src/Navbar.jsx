@@ -1,5 +1,7 @@
 import React from 'react';
 
+const typeformLink = "https://xhj91lsy6tk.typeform.com/to/BlKRxRQK";
+
 const Navbar = () => {
     return (
         <nav className='w-full h-10 flex items-center justify-between px-6 md:px-32 py-10'>
@@ -12,7 +14,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <button className='hidden md:block bg-black text-white py-3 px-5 rounded-xl font-medium'>Get Your Doctors Note</button>
+            <a href={typeformLink} className='hidden md:block bg-black text-white py-3 px-5 rounded-xl font-medium'>Get Your Doctors Note</a>
         </nav>
     );
 };
