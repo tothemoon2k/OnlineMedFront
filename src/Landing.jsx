@@ -88,7 +88,7 @@ const Landing = () => {
                 <div className='w-full md:w-1/2 flex justify-end'>
                     <div className='md:w-[90%]'>
                         <p className='text-[#A7C7E7] text-lg'>Advantages</p>
-                        <h2 className='font-semibold text-4xl'>Why Choose Uifry?</h2>
+                        <h2 className='font-semibold text-4xl'>Why Choose OnlineMed?</h2>
 
                         <div className='pt-7'>
                             <span className='flex items-center gap-4 mb-2'>
