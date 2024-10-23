@@ -5,9 +5,9 @@ import {Helmet} from "react-helmet";
 const Redirect = () => {
     const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     window.location.href = 'https://xhj91lsy6tk.typeform.com/to/hnIsFmiP';
-    // }, [navigate]);
+    useEffect(() => {
+        window.location.href = 'https://xhj91lsy6tk.typeform.com/to/hnIsFmiP';
+    }, [navigate]);
 
     return (
         <div>
