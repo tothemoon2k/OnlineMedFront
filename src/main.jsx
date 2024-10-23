@@ -7,11 +7,16 @@ import {
 import "./index.css";
 
 import Landing from "./routes/Landing";
+import Redirect from "./routes/Redirect";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Landing/>,
+  },
+  {
+    path: "/redirect",
+    element: <Redirect/>,
   },
 ]);
 

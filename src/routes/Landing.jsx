@@ -12,7 +12,7 @@ import cube04 from "../../public/assets/cube-04.png";
 import bellicon from "../../public/assets/bellicon.png";
 import nickJones from "../../public/assets/nickjones.png";
 
-const typeformLink = "https://xhj91lsy6tk.typeform.com/to/hnIsFmiP";
+const typeformLink = "/redirect";
 
 const Landing = () => {
     return (
