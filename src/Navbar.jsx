@@ -1,6 +1,6 @@
 import React from 'react';
 
-const typeformLink = "https://xhj91lsy6tk.typeform.com/to/BlKRxRQK";
+const typeformLink = "https://xhj91lsy6tk.typeform.com/to/hnIsFmiP";
 
 const Navbar = () => {
     return (
