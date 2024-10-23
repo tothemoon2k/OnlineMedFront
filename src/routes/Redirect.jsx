@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 const Redirect = () => {
     const navigate = useNavigate();
 
@@ -19,28 +22,17 @@ const Redirect = () => {
             gtag('config', 'AW-16749261252');
         `;
 
-        // Create the third script element for the conversion event
-        const script3 = document.createElement('script');
-        script3.innerHTML = `
-            gtag('event', 'conversion', {
-                'send_to': 'AW-16749261252/oWNuCLfC7eAZEMTj1bI-',
-                'transaction_id': ''
-            });
-        `;
-
-        // Append all scripts to the document head
+        // Append both scripts to the document head
         document.head.appendChild(script1);
         document.head.appendChild(script2);
-        document.head.appendChild(script3);
 
-        // Navigate to the home page
+        // Redirect the user to the Typeform link
         window.location.href = 'https://xhj91lsy6tk.typeform.com/to/hnIsFmiP';
 
         // Cleanup function to remove the scripts when the component is unmounted
         return () => {
             document.head.removeChild(script1);
             document.head.removeChild(script2);
-            document.head.removeChild(script3);
         };
     }, [navigate]);
 
