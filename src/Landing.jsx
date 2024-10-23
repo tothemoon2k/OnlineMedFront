@@ -28,7 +28,7 @@ const Landing = () => {
                 
                     <div className='flex flex-col md:flex-row gap-4 mb-1.5'>
                         <a href={typeformLink} className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Get Started <img className='h-8' src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></a>
-                        <button className='py-3 px-2 rounded-xl font-medium flex items-center gap-1.5'><img className='h-8' src="https://img.icons8.com/material-rounded/50/play--v1.png" alt="Play" />View Sample</button>
+                        <button className='py-3 px-2 rounded-xl font-medium flex items-center gap-1.5'><img className='h-8' src="https://img.icons8.com/material-rounded/50/play--v1.png" alt="Play" />View a Sample</button>
                     </div>
 
                     {/* <p className='mb-8 text-lg text-gray-500'>Questions? Reach out to us at support@excusemed.com</p> */}
@@ -59,7 +59,7 @@ const Landing = () => {
                                 <p className='font-medium'>Quick Access</p>
                             </span>
 
-                            <p className='text-gray-500'>No more waiting rooms. Get a real doctor's excuse note within an hour during our business hours of 6 am - 10 pm ET.</p>
+                            <p className='text-gray-500'>No more waiting rooms. Get a real doctor's excuse note within an hour during our business hours of 6 am - 10 pm ET.</p>
                         </div>
 
                         <div className='flex flex-col gap-1.5'>
@@ -68,16 +68,16 @@ const Landing = () => {
                                 <p className='font-medium'>Affordability</p>
                             </span>
 
-                            <p className='text-gray-500'>Get verified without breaking the bank. Our excuse notes cost only $29.</p>
+                            <p className='text-gray-500'>Get verified without breaking the bank. Our excuse notes cost only $25.</p>
                         </div>
 
                         <div className='flex flex-col gap-1.5'>
                             <span className='flex items-center gap-2'>
                                 <img className='h-6' src={cube04} alt="" />
-                                <p className='font-medium'>Peace Of Mind</p>
+                                <p className='font-medium'>Convenience</p>
                             </span>
 
-                            <p className='text-gray-500'>Trust in the authenticity of your excuse note.Our notes are provided by licensed professionals and are 100% verifiable.</p>
+                            <p className='text-gray-500'>Whether you're in bed or on the go, access our platform from anywhere, anytime.</p>
                         </div>
                     </div>
                 </div>
@@ -93,10 +93,10 @@ const Landing = () => {
                         <div className='pt-7'>
                             <span className='flex items-center gap-4 mb-2'>
                                 <img className='h-9' src={bellicon} alt="" />
-                                <p className='font-medium text-2xl'>Convenience</p>
+                                <p className='font-medium text-2xl'>Peace of Mind</p>
                             </span>
 
-                            <p className='text-gray-500'>No more waiting rooms. Get a real doctor's excuse note within an hour during our business hours of 6 am - 10 pm ET.</p>
+                            <p className='text-gray-500'>Trust in the authenticity of your excuse note. Our notes are provided by licensed professionals and are 100% verifiable.</p>
                         </div>
                     </div>
                 </div>
@@ -111,18 +111,23 @@ const Landing = () => {
             <section className='mt-24 md:mt-56 w-full h-fit flex flex-col md:flex-row justify-center'>
                 <div className='md:w-2/5 flex justify-center items-center relative'>
                     <img className='hidden md:block absolute w-full' src={circles} alt="circles" />
-                    <img className='md:w-[60%] z-10 rounded-2xl' src="https://t4.ftcdn.net/jpg/06/33/37/31/360_F_633373121_OoIiIFCExhCTdJB7pXxoOr74dsJrgIqt.jpg" alt="" />
+                    <img className='md:w-[70%] z-10 rounded-2xl' src="https://www.adfinitashealth.com/wp-content/uploads/2024/01/flex-hours.png" alt="" />
                 </div>
 
                 <div className='w-full md:w-1/2 flex justify-end'>
                     <div className='md:w-[90%]'>
                         <div className='pt-7'>
-                            <span className='flex items-center gap-4 mb-2'>
+                            <span className='flex items-center gap-4 mb-4'>
                                 <img className='h-9' src={bellicon} alt="" />
-                                <p className='font-medium text-3xl'>Convenience</p>
+                                <p className='font-medium text-3xl'>Get Your Valid Excuse Note Now</p>
                             </span>
 
-                            <p className='text-gray-500 text-xl'>No more waiting rooms. Get a real doctor's excuse note within an hour during our business hours of 6 am - 10 pm ET.</p>
+                            <p className='text-gray-500 text-xl'>Dealing with illness is hard enough. Don't stress about getting an excuse note. With our service, you'll receive prompt, genuine documentation, allowing you to focus solely on your recovery.</p>
+                        </div>
+
+                        <div className='flex flex-col md:flex-row gap-4 mb-1.5 pt-9'>
+                            <a href={typeformLink} className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Start Your Note <img className='h-8' src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></a>
+                            <button className='py-3 px-2 rounded-xl font-medium flex items-center gap-1.5'><img className='h-8' src="https://img.icons8.com/material-rounded/50/play--v1.png" alt="Play" />View a Sample</button>
                         </div>
                     </div>
                 </div>
@@ -139,7 +144,7 @@ const Landing = () => {
                 <div className='w-full flex flex-col md:flex-row pt-10 md:pt-14'>
                     <div className='hidden md:flex w-1/2 justify-center items-center relative'>
                         <img className='absolute w-full' src={circles} alt="circles" />
-                        <img className='w-[60%] z-10 rounded-2xl' src="https://t4.ftcdn.net/jpg/06/33/37/31/360_F_633373121_OoIiIFCExhCTdJB7pXxoOr74dsJrgIqt.jpg" alt="" />
+                        <img className='w-[60%] z-10 rounded-2xl' src="https://png.pngtree.com/thumb_back/fw800/background/20220504/pngtree-determined-young-doctor-gazes-confidently-at-the-camera-in-a-serious-portrait-photo-image_36357256.jpg" alt="" />
                     </div>
 
                     <div className='md:w-1/2'>
@@ -155,7 +160,7 @@ const Landing = () => {
 
             <section className='mt-24 md:mt-40 mx-auto md:w-4/5 py-40 px-8 md:px-20 bg-black flex flex-col rounded-xl relative overflow-hidden'>
                 <h3 className='text-white text-4xl font-semibold'>Ready To Get Your Note?</h3>
-                <p className='mt-4 mb-5 md:mt-2 md:mb-3.5 text-lg text-gray-400'>Risus habitant leo egestas mauris diam eget morbi tempus vulputate.</p>
+                <p className='mt-4 mb-5 md:mt-2 md:mb-3.5 text-lg text-gray-400'>Our service ensures you receive a legitimate and verifiable note in minutes, so you can focus on your recovery without any added stress.</p>
                 <a href={typeformLink} className='z-10 w-fit bg-white py-3 px-5 rounded-xl font-medium'>Get Your Doctors Note</a>
 
                 <img className='hidden md:block absolute -top-[60%] -right-[20%] h-[120%] object-cover' src={whiteCircle} alt="White circle designs" />
