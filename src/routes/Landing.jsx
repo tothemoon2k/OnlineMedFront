@@ -127,7 +127,7 @@ const Landing = () => {
 
                         <div className='flex flex-col md:flex-row gap-4 mb-1.5 pt-9'>
                             <a href={typeformLink} className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Start Your Note <img className='h-8' src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></a>
-                            <button className='py-3 px-2 rounded-xl font-medium flex items-center gap-1.5'><img className='h-8' src="https://img.icons8.com/material-rounded/50/play--v1.png" alt="Play" />View a Sample</button>
+                            <a href='https://firebasestorage.googleapis.com/v0/b/doctorsnotev2.appspot.com/o/sfduzi?alt=media&token=801ab62c-8292-4ea8-b350-ebfd30f6fd64' className='py-3 px-2 rounded-xl font-medium flex items-center gap-1.5'><img className='h-8' src="https://img.icons8.com/material-rounded/50/play--v1.png" alt="Play" />View a Sample</a>
                         </div>
                     </div>
                 </div>
