@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Clash Display';
+    src: url('../public/fonts/ClashDisplay-Variable.ttf');
+  }
+  
+/* Then apply the font to elements */
+* {
+    font-family: 'Clash Display', 'Helvetica';
+}
