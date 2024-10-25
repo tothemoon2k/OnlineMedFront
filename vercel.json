@@ -1,6 +1,6 @@
 {
     "routes": [
       { "src": "/redirect", "dest": "/" },
-      { "src": "/complete", "dest": "/" }
+      { "src": "/ordercomplete", "dest": "/" }
     ]
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const ThankYou = () => {
     useEffect(() => {
@@ -17,15 +19,16 @@ const ThankYou = () => {
         };
     }, []);
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-            <div className="bg-white p-8 rounded-lg shadow-md text-center">
-                <h1 className="text-2xl font-bold mb-4">Thank You for Your Order!</h1>
-                <p className="text-gray-700 mb-4">Your order has been successfully placed. We appreciate your business!</p>
-                <p className="text-gray-700 mb-4">
-                    If you have any questions, feel free to <Link to="/contact" className="text-blue-500 hover:underline">contact us</Link>.
-                </p>
-                <Link to="/" className="text-blue-500 hover:underline">Return to Home</Link>
+        <div className='w-screen h-screen flex flex-col justify-center items-center px-10 relative'>
+            <Navbar absolute={true} button={false}/>
+            <div>
+                <h1 className='mb-5 text-4xl md:text-5xl font-medium text-center'>Your're all set! 🎉✨</h1>
+                <h2 className='mb-9 text-gray-600 text-center text-2xl md:text-3xl'>Your note should be in your email in under 5 mins</h2>
+
+                <p className='text-gray-600 md:text-xl text-center'>If you don't receive an email within 10 mins, <br className='hidden md:block'/> please  call us at (984) 204-7128 or email us at hello@onlinemed.io</p>
             </div>
+
+            <Footer absolute={true}/>
         </div>
     );
 };

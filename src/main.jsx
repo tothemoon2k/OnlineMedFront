@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     element: <Redirect/>,
   },
   {
-    path: "/complete",
+    path: "/ordercomplete",
     element: <ThankYou/>,
   },
 ]);
