@@ -8,6 +8,7 @@ import "./index.css";
 
 import Landing from "./routes/Landing";
 import Redirect from "./routes/Redirect";
+import ThankYou from "./routes/ThankYou";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/redirect",
     element: <Redirect/>,
+  },
+  {
+    path: "/complete",
+    element: <ThankYou/>,
   },
 ]);
 
