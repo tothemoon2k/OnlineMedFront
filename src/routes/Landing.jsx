@@ -1,4 +1,5 @@
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import bg from "../../public/assets/bg.png";
@@ -171,6 +172,8 @@ const Landing = () => {
             </section>
 
             <Footer/>
+
+            <Analytics />
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {Helmet} from "react-helmet";
+import { Analytics } from '@vercel/analytics/react';
 
 const Redirect = () => {
     const navigate = useNavigate();
@@ -33,6 +34,8 @@ const Redirect = () => {
                 `}
                 </script>
             </Helmet>
+
+            <Analytics />
         </div>
     );
 };

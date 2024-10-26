@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Analytics } from '@vercel/analytics/react';
 
 const ThankYou = () => {
     useEffect(() => {
@@ -29,6 +30,8 @@ const ThankYou = () => {
             </div>
 
             <Footer absolute={true}/>
+            
+            <Analytics />
         </div>
     );
 };
