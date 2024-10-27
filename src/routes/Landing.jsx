@@ -1,5 +1,6 @@
 import React from 'react';
 import { Analytics } from '@vercel/analytics/react';
+import { track } from '@vercel/analytics';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import bg from "../../public/assets/bg.png";
@@ -14,9 +15,12 @@ import cube04 from "../../public/assets/cube-04.png";
 import bellicon from "../../public/assets/bellicon.png";
 import nickJones from "../../public/assets/nickjones.png";
 
-const typeformLink = "/redirect";
-
 const Landing = () => {
+    const handleClick = () => {
+        track('click-cta');
+        window.location.href = "/redirect";
+    };
+
     return (
         <div className='w-screen h-fit relative overflow-hidden px-8 md:px-0'>
             <img className='w-screen absolute -z-10' src={bg} alt="Background pattern" />
@@ -29,8 +33,8 @@ const Landing = () => {
                     <p className='md:text-lg text-gray-500 pt-1.5 pb-4 md:pb-2.5'>Need a doctors note for work or school? We’re here to help.  Licensed healthcare providers offering real, verifiable excuse notes for workers and students. Quick, reliable, and hassle-free.</p>
                 
                     <div className='flex flex-col md:flex-row gap-4 mb-1.5'>
-                        <a href={typeformLink} className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Get Started <img className='h-8' src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></a>
-                        <a href='https://firebasestorage.googleapis.com/v0/b/doctorsnotev2.appspot.com/o/sfduzi?alt=media&token=801ab62c-8292-4ea8-b350-ebfd30f6fd64' className='py-3 px-2 rounded-xl font-medium flex items-center gap-1.5'><img className='h-8' src="https://img.icons8.com/material-rounded/50/play--v1.png" alt="Play" />View a Sample</a>
+                        <button onClick={handleClick} className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Get Started <img className='h-8' src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></button>
+                        <a href='https://firebasestorage.googleapis.com/v0/b/doctorsnotev2.appspot.com/o/cl6oczh?alt=media&token=3b56200a-e4ae-40f2-a2e6-958dcf8d8485' className='py-3 px-2 rounded-xl font-medium flex items-center gap-1.5'><img className='h-8' src="https://img.icons8.com/material-rounded/50/play--v1.png" alt="Play" />View a Sample</a>
                     </div>
 
                     {/* <p className='mb-8 text-lg text-gray-500'>Questions? Reach out to us at support@excusemed.com</p> */}
@@ -128,8 +132,8 @@ const Landing = () => {
                         </div>
 
                         <div className='flex flex-col md:flex-row gap-4 mb-1.5 pt-9'>
-                            <a href={typeformLink} className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Start Your Note <img className='h-8' src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></a>
-                            <a href='https://firebasestorage.googleapis.com/v0/b/doctorsnotev2.appspot.com/o/sfduzi?alt=media&token=801ab62c-8292-4ea8-b350-ebfd30f6fd64' className='py-3 px-2 rounded-xl font-medium flex items-center gap-1.5'><img className='h-8' src="https://img.icons8.com/material-rounded/50/play--v1.png" alt="Play" />View a Sample</a>
+                            <button onClick={handleClick} className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Start Your Note <img className='h-8' src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></button>
+                            <a href='https://firebasestorage.googleapis.com/v0/b/doctorsnotev2.appspot.com/o/cl6oczh?alt=media&token=3b56200a-e4ae-40f2-a2e6-958dcf8d8485' className='py-3 px-2 rounded-xl font-medium flex items-center gap-1.5'><img className='h-8' src="https://img.icons8.com/material-rounded/50/play--v1.png" alt="Play" />View a Sample</a>
                         </div>
                     </div>
                 </div>
@@ -163,7 +167,7 @@ const Landing = () => {
             <section className='mt-24 md:mt-40 mx-auto md:w-4/5 py-40 px-8 md:px-20 bg-black flex flex-col rounded-xl relative overflow-hidden'>
                 <h3 className='text-white text-4xl font-semibold'>Ready To Get Your Note?</h3>
                 <p className='mt-4 mb-5 md:mt-2 md:mb-3.5 text-lg text-gray-400'>Our service ensures you receive a legitimate and verifiable note in minutes, so you can focus on your recovery without any added stress.</p>
-                <a href={typeformLink} className='z-10 w-fit bg-white py-3 px-5 rounded-xl font-medium'>Get Your Doctors Note</a>
+                <button onClick={handleClick} className='z-10 w-fit bg-white py-3 px-5 rounded-xl font-medium'>Get Your Doctors Note</button>
 
                 <img className='hidden md:block absolute -top-[60%] -right-[20%] h-[120%] object-cover' src={whiteCircle} alt="White circle designs" />
                 <img className='hidden md:block absolute -bottom-[75%] -left-[20%] h-[120%] object-cover' src={whiteCircle} alt="White circle designs" />
