@@ -7,7 +7,7 @@ const Redirect = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        window.location.href = 'https://xhj91lsy6tk.typeform.com/to/hnIsFmiP';
+        window.location.href = 'https://xhj91lsy6tk.typeform.com/to/at6HrUgA';
     }, [navigate]);
 
     return (
