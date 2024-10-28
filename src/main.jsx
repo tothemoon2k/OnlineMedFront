@@ -11,6 +11,7 @@ import Redirect from "./routes/Redirect";
 import ThankYou from "./routes/ThankYou";
 import Terms from "./routes/Terms";
 import Privacy from "./routes/Privacy";
+import Hipaa from "./routes/Hipaa";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
   {
     path: "/privacy",
     element: <Privacy/>,
+  },
+  {
+    path: "/hipaa",
+    element: <Hipaa/>,
   },
 ]);
 
