@@ -9,6 +9,7 @@ import "./index.css";
 import Landing from "./routes/Landing";
 import Redirect from "./routes/Redirect";
 import ThankYou from "./routes/ThankYou";
+import Terms from "./routes/Terms";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/ordercomplete",
     element: <ThankYou/>,
+  },
+  {
+    path: "/terms",
+    element: <Terms/>,
   },
 ]);
 
