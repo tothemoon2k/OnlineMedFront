@@ -4,6 +4,7 @@
       { "src": "/ordercomplete", "dest": "/" },
       { "src": "/terms", "dest": "/" },
       { "src": "/privacy", "dest": "/" },
-      { "src": "/hipaa", "dest": "/" }
+      { "src": "/hipaa", "dest": "/" },
+      { "src": "/telehealth", "dest": "/" }
     ]
 }
