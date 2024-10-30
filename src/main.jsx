@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     element: <Redirect/>,
   },
   {
-    path: "/ordercomplete",
+    path: "/orderplaced",
     element: <ThankYou/>,
   },
   {
