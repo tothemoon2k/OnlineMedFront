@@ -6,19 +6,6 @@ import Footer from '../components/Footer';
 import { Analytics } from '@vercel/analytics/react';
 
 const ThankYou = () => {
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = "https://www.googletagmanager.com/gtag/js?id=AW-16749261252";
-        script.async = true;
-        document.head.appendChild(script);
-
-        script.onload = () => {
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-16749261252');
-        };
-    }, []);
     return (
         <div className='w-screen h-screen flex flex-col justify-center items-center px-10 relative'>
             <Navbar absolute={true} button={false}/>
