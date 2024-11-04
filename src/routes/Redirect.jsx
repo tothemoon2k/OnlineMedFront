@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
+import { track } from '@vercel/analytics';
 
 const Redirect = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        window.location.href = 'https://xhj91lsy6tk.typeform.com/to/PwQVNSXI';
+        track('click-cta');
+        window.location.href = 'https://xhj91lsy6tk.typeform.com/to/DUnRBKg7';
     }, [navigate]);
 
     return (

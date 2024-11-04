@@ -1,6 +1,5 @@
 import React from 'react';
 import { Analytics } from '@vercel/analytics/react';
-import { track } from '@vercel/analytics';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import bg from "../../public/assets/bg.png";
@@ -22,7 +21,6 @@ import nickJones from "../../public/assets/nickjones.png";
 
 const Landing = () => {
     const handleClick = () => {
-        track('click-cta');
         window.location.href = "/redirect";
     };
 
