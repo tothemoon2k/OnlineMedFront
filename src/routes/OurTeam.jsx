@@ -31,10 +31,10 @@ const OurTeam = () => {
             <img className='w-screen absolute -z-10' src={bg} alt="Background pattern" />
             <Navbar />
 
-            <h1 className='px-12 mt-16 text-5xl font-medium text-center'>We are the people <br /> who make up OnlineMed</h1>
-            <p className='mt-3 md:text-lg md:text-center'>Our philosophy is simple; hire great people and give them <br /> the resources and support to do their best work.</p>
+            <h1 className='md:px-12 mt-12 md:mt-16 text-5xl font-medium md:text-center'>We are the people <br className='hidden md:block'/> who make up OnlineMed</h1>
+            <p className='mt-3 md:text-lg md:text-center'>Our philosophy is simple; hire great people and give them <br className='hidden md:block'/> the resources and support to do their best work.</p>
 
-            <section className='mt-20 w-full h-fit'>
+            <section className='mt-14 md:mt-20 w-full h-fit'>
                 <div className='w-full h-fit py-2 md:py-2 rounded-xl grid grid-cols-2 gap-5 lg:grid-cols-3 md:gap-8 md:px-6 justify-center justify-items-center'>
                     <div className='h-fit w-fit shrink-0 rounded-2xl hover:scale-105 transition-all'>
                         <img className='h-48 w-full md:h-80 md:w-72 object-cover rounded-xl' src={doc1} alt="" />
