@@ -13,6 +13,7 @@ import Terms from "./routes/Terms";
 import Privacy from "./routes/Privacy";
 import Hipaa from "./routes/Hipaa";
 import Telehealth from "./routes/Telehealth";
+import OurTeam from "./routes/OurTeam";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/orderplaced",
     element: <ThankYou/>,
+  },
+  {
+    path: "/team",
+    element: <OurTeam/>,
   },
   {
     path: "/terms",

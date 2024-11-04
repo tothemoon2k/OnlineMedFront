@@ -13,7 +13,11 @@ import star7 from "../../public/assets/star-7.png";
 import cube02 from "../../public/assets/cube-02.png";
 import cube04 from "../../public/assets/cube-04.png";
 import bellicon from "../../public/assets/bellicon.png";
-import nickJones from "../../public/assets/nickjones.png";
+import doc1 from "../../public/assets/doc1.png";
+import doc2 from "../../public/assets/doc2.png";
+import doc3 from "../../public/assets/doc3.png";
+import doc4 from "../../public/assets/doc4.png";
+import doc5 from "../../public/assets/doc5.png";
 
 const Landing = () => {
     const handleClick = () => {
@@ -143,28 +147,57 @@ const Landing = () => {
             {/* About Us Section */}
             <section className='mt-24 md:mt-56 w-full h-fit'>
                 <div className='w-full flex flex-col items-center'>
-                    <p className='text-lg'>ABOUT US</p>
-                    <h2 className='font-semibold text-4xl text-center'>Doctor's Note Solutions</h2>
+                    <p className='text-lg'>OUR TEAM</p>
+                    <h2 className='font-semibold text-4xl text-center'>Our experienced medical team is here to help</h2>
                 </div>
 
-                <div className='w-full flex flex-col md:flex-row pt-10 md:pt-14'>
-                    <div className='hidden md:flex w-1/2 justify-center items-center relative'>
-                        <img className='absolute w-full' src={circles} alt="circles" />
-                        <img className='w-[60%] z-10 rounded-2xl' src="https://png.pngtree.com/thumb_back/fw800/background/20220504/pngtree-determined-young-doctor-gazes-confidently-at-the-camera-in-a-serious-portrait-photo-image_36357256.jpg" alt="" />
+                <div className='mt-14 w-full h-fit py-2 md:py-2 rounded-xl grid grid-cols-2 gap-4 lg:grid-cols-3 md:gap-6 md:px-6 justify-center justify-items-center'>
+                    <div className='h-fit w-fit shrink-0 bg-[#f7f3e7] relative rounded-2xl overflow-hidden hover:scale-105 transition-all'>
+                        <img className='h-48 w-full md:h-80 md:w-72 object-cover' src={doc1} alt="" />
+                        <div className='absolute bottom-2 py-1.5 px-4 bg-white bg-opacity-85 translate-x-1/2 right-1/2 w-[90%] rounded-xl'>
+                            <p className='font-medium text-sm md:text-lg'>Dr. Kelvin Jackson, MD</p>
+                            <p className='hidden md:block text-gray-600 text-sm md:text-base'>Medical Director</p>
+                        </div>
                     </div>
 
-                    <div className='md:w-1/2'>
-                        <h4 className='mb-8 md:mb-10 text-3xl md:w-3/5'>Sick note requirements strain the healthcare system and add stress to sick employees and students. We offer a trusted and convenient way to alleviate this.</h4>
-                        <p className='text-gray-500 text-lg md:w-3/5'>“This service isn't just about convenience; it's about understanding, compassion, and making the recovery journey a little easier for everyone involved.”</p>
+                    <div className='h-fit w-fit shrink-0 bg-[#f7f3e7] relative rounded-2xl overflow-hidden hover:scale-105 transition-all'>
+                        <img className='h-48 w-full md:h-80 md:w-72 object-cover' src={doc2} alt="" />
+                        <div className='absolute bottom-2 py-1.5 px-4 bg-white bg-opacity-85 translate-x-1/2 right-1/2 w-[90%] rounded-xl'>
+                            <p className='font-medium text-sm md:text-lg'>Dr. Rajesh
+                            Kumar, MD</p>
+                            <p className='hidden md:block text-gray-600'>Occupational Health Physician</p>
+                        </div>
+                    </div>
 
-                        <img className='mt-6 h-8 mb-5' src={nickJones} alt="" />
+                    <div className='h-fit w-fit shrink-0 bg-[#f7f3e7] relative rounded-2xl overflow-hidden hover:scale-105 transition-all'>
+                        <img className='h-48 w-full md:h-80 md:w-72 object-cover' src={doc3} alt="" />
+                        <div className='absolute bottom-2 py-1.5 px-4 bg-white bg-opacity-85 translate-x-1/2 right-1/2 w-[90%] rounded-xl'>
+                            <p className='font-medium text-sm md:text-lg'>Dr. Lucy Crawford, DO</p>
+                            <p className='hidden md:block text-gray-600'>Family Medicine Physician</p>
+                        </div>
+                    </div>
 
-                        <p className='font-medium text-lg'>Nick Jones</p>
+                    <div className='h-fit w-fit shrink-0 bg-[#f7f3e7] relative rounded-2xl overflow-hidden hover:scale-105 transition-all'>
+                        <img className='h-48 w-full md:h-80 md:w-72 object-cover' src={doc4} alt="" />
+                        <div className='absolute bottom-2 py-1.5 px-4 bg-white bg-opacity-85 translate-x-1/2 right-1/2 w-[90%] rounded-xl'>
+                            <p className='font-medium text-sm md:text-lg'>Dr. Elena Rodriguez, MD</p>
+                            <p className='hidden md:block text-gray-600'>Urgent Care Specialist</p>
+                        </div>
+                    </div>
+
+                    <div className='h-fit w-fit shrink-0 bg-[#f7f3e7] relative rounded-2xl overflow-hidden hover:scale-105 transition-all'>
+                        <img className='h-48 w-full md:h-80 md:w-72 object-cover' src={doc5} alt="" />
+                        <div className='absolute bottom-2 py-1.5 px-4 bg-white bg-opacity-85 translate-x-1/2 right-1/2 w-[90%] rounded-xl'>
+                            <p className='font-medium text-sm md:text-lg'>Jacob Santana</p>
+                            <p className='hidden md:block text-gray-600'>Customer Success Director</p>
+                        </div>
                     </div>
                 </div>
+
+                <a href='/team' className='mt-12 mx-auto w-fit flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>About Us <img className='h-8' src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></a>
             </section>
 
-            <section className='mt-24 md:mt-40 mx-auto md:w-4/5 py-40 px-8 md:px-20 bg-black flex flex-col rounded-xl relative overflow-hidden'>
+            <section className='mt-24 md:mt-36 mx-auto md:w-4/5 py-40 px-8 md:px-20 bg-black flex flex-col rounded-xl relative overflow-hidden'>
                 <h3 className='text-white text-4xl font-semibold'>Ready To Get Your Note?</h3>
                 <p className='mt-4 mb-5 md:mt-2 md:mb-3.5 text-lg text-gray-400'>Our service ensures you receive a legitimate and verifiable note in minutes, so you can focus on your recovery without any added stress.</p>
                 <button onClick={handleClick} className='z-10 w-fit bg-white py-3 px-5 rounded-xl font-medium'>Get Your Doctors Note</button>

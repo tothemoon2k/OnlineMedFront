@@ -2,6 +2,7 @@
     "routes": [
       { "src": "/redirect", "dest": "/" },
       { "src": "/orderplaced", "dest": "/" },
+      { "src": "/team", "dest": "/" },
       { "src": "/terms", "dest": "/" },
       { "src": "/privacy", "dest": "/" },
       { "src": "/hipaa", "dest": "/" },
