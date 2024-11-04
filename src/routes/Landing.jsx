@@ -18,6 +18,7 @@ import doc2 from "../../public/assets/doc2.png";
 import doc3 from "../../public/assets/doc3.png";
 import doc4 from "../../public/assets/doc4.png";
 import doc5 from "../../public/assets/doc5.png";
+import nickJones from "../../public/assets/nickjones.png";
 
 const Landing = () => {
     const handleClick = () => {
@@ -148,7 +149,7 @@ const Landing = () => {
             <section className='mt-24 md:mt-56 w-full h-fit'>
                 <div className='w-full flex flex-col items-center'>
                     <p className='text-lg'>OUR TEAM</p>
-                    <h2 className='font-semibold text-4xl text-center'>Our experienced medical team is here to help</h2>
+                    <h2 className='font-semibold text-4xl text-center'>Meet the OnlineMed Team</h2>
                 </div>
 
                 <div className='mt-14 w-full h-fit py-2 md:py-2 rounded-xl grid grid-cols-2 gap-4 lg:grid-cols-3 md:gap-6 md:px-6 justify-center justify-items-center'>
@@ -194,7 +195,30 @@ const Landing = () => {
                     </div>
                 </div>
 
-                <a href='/team' className='mt-12 mx-auto w-fit flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>About Us <img className='h-8' src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></a>
+                <a href='/team' className='mt-12 mx-auto w-fit flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Our Team <img className='h-8' src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></a>
+            </section>
+
+            <section className='mt-24 md:mt-56 w-full h-fit'>
+                <div className='w-full flex flex-col items-center'>
+                    <p className='text-lg'>ABOUT US</p>
+                    <h2 className='font-semibold text-4xl text-center'>Doctor's Note Solutions</h2>
+                </div>
+
+                <div className='w-full flex flex-col md:flex-row pt-10 md:pt-14'>
+                    <div className='hidden md:flex w-1/2 justify-center items-center relative'>
+                        <img className='absolute w-full' src={circles} alt="circles" />
+                        <img className='w-[60%] z-10 rounded-2xl' src="https://png.pngtree.com/thumb_back/fw800/background/20220504/pngtree-determined-young-doctor-gazes-confidently-at-the-camera-in-a-serious-portrait-photo-image_36357256.jpg" alt="" />
+                    </div>
+
+                    <div className='md:w-1/2'>
+                        <h4 className='mb-8 md:mb-10 text-3xl md:w-3/5'>Sick note requirements strain the healthcare system and add stress to sick employees and students. We offer a trusted and convenient way to alleviate this.</h4>
+                        <p className='text-gray-500 text-lg md:w-3/5'>“This service isn't just about convenience; it's about understanding, compassion, and making the recovery journey a little easier for everyone involved.”</p>
+
+                        <img className='mt-6 h-8 mb-5' src={nickJones} alt="" />
+
+                        <p className='font-medium text-lg'>Nick Jones</p>
+                    </div>
+                </div>
             </section>
 
             <section className='mt-24 md:mt-36 mx-auto md:w-4/5 py-40 px-8 md:px-20 bg-black flex flex-col rounded-xl relative overflow-hidden'>
