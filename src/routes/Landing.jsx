@@ -39,7 +39,7 @@ const Landing = () => {
                 
                     <div className='flex flex-col md:flex-row gap-4 mb-1.5'>
                         <button onClick={handleClick} className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Get Started <img className='h-8' src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></button>
-                        <a href='https://firebasestorage.googleapis.com/v0/b/doctorsnotev2.appspot.com/o/cl6oczh?alt=media&token=3b56200a-e4ae-40f2-a2e6-958dcf8d8485' className='py-3 px-2 rounded-xl font-medium flex items-center gap-1.5'><img className='h-8' src="https://img.icons8.com/material-rounded/50/play--v1.png" alt="Play" />View a Sample</a>
+                        <a href='https://firebasestorage.googleapis.com/v0/b/doctorsnotev2.appspot.com/o/z52n4k?alt=media&token=5517dd91-2805-4287-b727-99c1cf5a084d' className='py-3 px-2 rounded-xl font-medium flex items-center gap-1.5'><img className='h-8' src="https://img.icons8.com/material-rounded/50/play--v1.png" alt="Play" />View a Sample</a>
                     </div>
 
                     {/* <p className='mb-8 text-lg text-gray-500'>Questions? Reach out to us at support@excusemed.com</p> */}
@@ -138,7 +138,7 @@ const Landing = () => {
 
                         <div className='flex flex-col md:flex-row gap-4 mb-1.5 pt-9'>
                             <button onClick={handleClick} className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Start Your Note <img className='h-8' src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></button>
-                            <a href='https://firebasestorage.googleapis.com/v0/b/doctorsnotev2.appspot.com/o/cl6oczh?alt=media&token=3b56200a-e4ae-40f2-a2e6-958dcf8d8485' className='py-3 px-2 rounded-xl font-medium flex items-center gap-1.5'><img className='h-8' src="https://img.icons8.com/material-rounded/50/play--v1.png" alt="Play" />View a Sample</a>
+                            <a href='https://firebasestorage.googleapis.com/v0/b/doctorsnotev2.appspot.com/o/z52n4k?alt=media&token=5517dd91-2805-4287-b727-99c1cf5a084d' className='py-3 px-2 rounded-xl font-medium flex items-center gap-1.5'><img className='h-8' src="https://img.icons8.com/material-rounded/50/play--v1.png" alt="Play" />View a Sample</a>
                         </div>
                     </div>
                 </div>
