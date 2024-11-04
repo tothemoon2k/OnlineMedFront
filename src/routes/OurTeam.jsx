@@ -28,7 +28,7 @@ const OurTeam = () => {
 
     return (
         <div className='w-screen h-fit relative overflow-hidden px-8 md:px-0 flex flex-col items-center'>
-            <img className='w-screen absolute -z-10' src={bg} alt="Background pattern" />
+            <img className='w-screen absolute -z-10' loading="lazy" src={bg} alt="Background pattern" />
             <Navbar />
 
             <h1 className='md:px-12 mt-12 md:mt-16 text-5xl font-medium md:text-center'>We are the people <br className='hidden md:block'/> who make up OnlineMed</h1>
