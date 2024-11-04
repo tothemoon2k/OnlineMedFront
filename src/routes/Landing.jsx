@@ -42,7 +42,6 @@ const Landing = () => {
                         <a href='https://firebasestorage.googleapis.com/v0/b/doctorsnotev2.appspot.com/o/z52n4k?alt=media&token=5517dd91-2805-4287-b727-99c1cf5a084d' className='py-3 px-2 rounded-xl font-medium flex items-center gap-1.5'><img className='h-8' src="https://img.icons8.com/material-rounded/50/play--v1.png" alt="Play" />View a Sample</a>
                     </div>
 
-                    {/* <p className='mb-8 text-lg text-gray-500'>Questions? Reach out to us at support@excusemed.com</p> */}
                 </div>
 
                 <div className='hidden md:flex grow justify-center items-center'>
