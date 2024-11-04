@@ -10,7 +10,7 @@ const Navbar = ({ absolute, button }) => {
 
                 <div className='flex items-center gap-3 font-medium text-lg'>
                     <a className='' href="/">Home</a>
-                    <a className='' href="">FAQ</a>
+                    <a className='' href="/faq">FAQ</a>
                 </div>
             </div>
 

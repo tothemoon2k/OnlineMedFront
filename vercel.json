@@ -3,6 +3,7 @@
       { "src": "/redirect", "dest": "/" },
       { "src": "/orderplaced", "dest": "/" },
       { "src": "/team", "dest": "/" },
+      { "src": "/faq", "dest": "/" },
       { "src": "/terms", "dest": "/" },
       { "src": "/privacy", "dest": "/" },
       { "src": "/hipaa", "dest": "/" },
