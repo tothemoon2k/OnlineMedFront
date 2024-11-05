@@ -10,15 +10,6 @@ const ThankYou = () => {
     return (
         <div className='w-screen h-screen flex flex-col justify-center items-center px-10 relative'>
             <Helmet>
-                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16749261252"></script>
-                <script type="text/javascript">
-                {`
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    gtag('config', 'AW-16749261252');
-                `}
-                </script>
                 <script type="text/javascript">
                 {`
                     gtag('event', 'conversion', {
