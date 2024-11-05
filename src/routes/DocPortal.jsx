@@ -1,6 +1,32 @@
 import React from 'react';
+import {firestore} from '../firebase';
+import { collection, getDocs } from "firebase/firestore";
+import { useState, useEffect } from 'react';
 
 const DocPortal = () => {
+    const [documents, setDocuments] = useState([]);
+    const [selectedDoc, setSelectedDoc] = useState(null);
+
+    useEffect(() => {
+        const fetchDocuments = async () => {
+            const querySnapshot = await getDocs(collection(firestore, 'notes'));
+            const docs = [];
+            querySnapshot.forEach((doc) => {
+                docs.push({ id: doc.id, ...doc.data() });
+            });
+            setDocuments(docs);
+        };
+        fetchDocuments();
+    }, []);
+
+    const handleDocClick = (document) => {
+        setSelectedDoc(document);
+    };
+
+    const closeModal = (document) => {
+        setSelectedDoc(null);
+    };
+
     return (
         <div className='relative w-screen h-fit bg-[#f8faff]'>
             <div className='w-[89%] mx-auto flex justify-between pt-5 pb-6 items-center'>
@@ -16,6 +42,88 @@ const DocPortal = () => {
                                 </svg>
                             </div>
                             <input className="py-3 ps-10 pe-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" type="text" role="combobox" aria-expanded="false" placeholder="Type a name" value="" data-hs-combo-box-input=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className={`${selectedDoc ? 'flex' : 'hidden'} top-0 absolute z-10 bg-gray-800 bg-opacity-40 w-screen h-screen justify-center items-center`}>
+                <div className='relative bg-white w-3/4 h-3/4 rounded-2xl shadow-lg'>
+                    <div className='w-full bg-gray-200 rounded-t-2xl flex items-center justify-between px-10 py-4'>
+                        <h2 className='text-xl font-medium'>Patient Info</h2>
+
+                        <img className='h-6' onClick={closeModal} src="https://img.icons8.com/ios-filled/50/delete-sign--v1.png" alt="" />
+                    </div>
+
+                    <div className='w-full h-[90%] py-6 px-10 flex'>
+                        <div className='w-1/2 h-fit grid grid-cols-2'>
+                            <div>
+                                <p className='text-gray-500'>Patient Name</p>
+                                <p className='text-xl font-medium'>{selectedDoc?.firstName} {selectedDoc?.lastName}</p>
+                            </div>
+
+                            <div>
+                                <p className='text-gray-500'>Days Off</p>
+                                <p className='text-xl font-medium'>{selectedDoc?.numOfDays}</p>
+                            </div>
+
+                            <div>
+                                <p className='text-gray-500'>Reasoning</p>
+                                <p className='text-xl font-medium'>{selectedDoc?.reasoning}</p>
+                            </div>
+
+                            <div>
+                                <p className='text-gray-500'>Start Date</p>
+                                <p className='text-xl font-medium'>{selectedDoc?.timeOffStart}</p>
+                            </div>
+
+                            <div>
+                                <p className='text-gray-500'>Detailed Reasoning</p>
+                                <p className='text-xl font-medium'>{selectedDoc?.detailedReasoning || "N/A"}</p>
+                            </div>
+
+                            <div>
+                                <p className='text-gray-500'>Return Date</p>
+                                <p className='text-xl font-medium'>{selectedDoc?.timeOffEnd}</p>
+                            </div>
+
+                            <div>
+                                <p className='text-gray-500'>Symptoms</p>
+                                <p className='text-xl font-medium'>{selectedDoc?.symptoms || "N/A"}</p>
+                            </div>
+
+                            <div>
+                                <p className='text-gray-500'>Condition Disclosure</p>
+                                <p className='text-xl font-medium'>{selectedDoc?.conditionDisclosure === true ? "Yes" : selectedDoc?.conditionDisclosure === false ? "No" : "N/A"}</p>
+                            </div>
+
+                            <div>
+                                <p className='text-gray-500'>Work or School?</p>
+                                <p className='text-xl font-medium'>{selectedDoc?.workOrSchool}</p>
+                            </div>
+
+                            <div>
+                                <p className='text-gray-500'>Additional Info</p>
+                                <p className='text-xl font-medium'>{selectedDoc?.additionalInfo || "N/A"}</p>
+                            </div>
+                        </div>
+
+                        <div className='w-1/2 h-full flex flex-col items-center'>
+                            <div className="w-4/5 h-1/2 mb-12">
+                                <label htmlFor="input-label" className="block font-medium mb-2">Note Body</label>
+                                <textarea 
+                                    id="input-label" 
+                                    className="py-3 px-4 h-full block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" 
+                                    placeholder="Note Body" 
+                                    value={selectedDoc?.noteBody || ""} 
+                                    onChange={(e) => setSelectedDoc({...selectedDoc, noteBody: e.target.value})}
+                                />
+                            </div>
+
+                            <div className='w-4/5 flex flex-col items-end gap-4'>
+                                <p className='text-gray-500'>Characters Remaining: {selectedDoc?.noteBody ? 500 - selectedDoc.noteBody.length : 500}</p>
+                                <button className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Send <img className='h-6' src="https://img.icons8.com/ios-glyphs/70/ffffff/filled-sent.png" alt="Long arrow" /></button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -83,38 +191,25 @@ const DocPortal = () => {
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-gray-200">
-                                        <tr>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">John Brown</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">45</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">New York No. 1 Lake Park</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">123-456-7890</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">john.brown@example.com</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                <p className='bg-red-200 flex justify-center items-center text-red-500 px-1 py-2 rounded-lg border border-red-500'>Needs Review</p>
-                                            </td>
-                                        </tr>
 
-                                        <tr>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">Jim Green</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">27</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">London No. 1 Lake Park</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">987-654-3210</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">jim.green@example.com</td>
+                                    {documents.map((doc) => (
+                                        <tr key={doc.id} onClick={() => handleDocClick(doc)}>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{doc.firstName} {doc.lastName}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{doc.timeOffStart}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{doc.timeOffEnd}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{doc.reasoning}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{doc.detailedReasoning || "N/A"}</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                <p className='bg-blue-200 flex justify-center items-center text-blue-500 px-1 py-2 rounded-lg border border-blue-500'>Complete</p>
+                                                <p className={`flex justify-center items-center px-1 py-2 rounded-lg border ${
+                                                    doc.status === "Complete" ? "bg-blue-200 text-blue-500 border-blue-500" :
+                                                    doc.status === "Needs Review" ? "bg-red-200 text-red-500 border-red-500" :
+                                                    doc.status === "Pending Info" ? "bg-yellow-200 text-yellow-500 border-yellow-500" : ""
+                                                }`}>
+                                                    {doc.status}
+                                                </p>
                                             </td>
                                         </tr>
-
-                                        <tr>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">Joe Black</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">31</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">Sidney No. 1 Lake Park</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">555-555-5555</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">joe.black@example.com</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                <p className='bg-yellow-200 flex justify-center items-center text-yellow-500 px-1 py-2 rounded-lg border border-yellow-500'>Pending Info</p>
-                                            </td>
-                                        </tr>
+                                    ))}
                                     </tbody>
                                 </table>
                             </div>
