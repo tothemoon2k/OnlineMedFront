@@ -15,6 +15,7 @@ import Hipaa from "./routes/Hipaa";
 import Telehealth from "./routes/Telehealth";
 import OurTeam from "./routes/OurTeam";
 import Faq from "./routes/Faq";
+import DocPortal from "./routes/DocPortal";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/faq",
     element: <Faq/>,
+  },
+  {
+    path: "/docportal",
+    element: <DocPortal/>,
   },
   {
     path: "/terms",
