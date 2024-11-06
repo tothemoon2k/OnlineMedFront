@@ -8,7 +8,7 @@ const Redirect = () => {
 
     useEffect(() => {
         track('click-cta');
-        window.location.href = 'https://xhj91lsy6tk.typeform.com/to/ZdGdaqg4';
+        window.location.href = 'https://xhj91lsy6tk.typeform.com/to/DUnRBKg7';
     }, [navigate]);
 
     return (
