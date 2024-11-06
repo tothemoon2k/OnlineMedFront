@@ -16,6 +16,7 @@ import Telehealth from "./routes/Telehealth";
 import OurTeam from "./routes/OurTeam";
 import Faq from "./routes/Faq";
 import DocPortal from "./routes/DocPortal";
+import Login from "./routes/Login";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: "/docportal",
     element: <DocPortal/>,
+  },
+  {
+    path: "/login",
+    element: <Login/>,
   },
   {
     path: "/terms",

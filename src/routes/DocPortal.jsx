@@ -1,7 +1,8 @@
 import React from 'react';
-import {firestore} from '../firebase';
-import { collection, getDocs } from "firebase/firestore";
+import {firestore} from '../firebase/firebase';
+import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const DocPortal = () => {
     const [documents, setDocuments] = useState([]);
@@ -23,8 +24,31 @@ const DocPortal = () => {
         setSelectedDoc(document);
     };
 
-    const closeModal = (document) => {
+    const closeModal = () => {
         setSelectedDoc(null);
+    };
+
+    const sendNote = async () => {
+        const docRef = doc(firestore, 'notes', selectedDoc.id);
+
+        try {
+            await updateDoc(docRef, {
+                noteBody: selectedDoc.noteBody
+            });
+
+            await axios.post('http://localhost:4000/completenote', {
+                docId: selectedDoc.id
+            });
+
+            alert('Note sent successfully!');
+
+            setTimeout(() => {
+                window.location.reload();
+            }, 3000);
+        } catch (error) {
+            alert('An error occurred while sending the note. Please try again later.');
+            console.log(error);
+        }
     };
 
     return (
@@ -47,16 +71,16 @@ const DocPortal = () => {
                 </div>
             </div>
 
-            <div className={`${selectedDoc ? 'flex' : 'hidden'} top-0 absolute z-10 bg-gray-800 bg-opacity-40 w-screen h-screen justify-center items-center`}>
+            <div className={`${selectedDoc ? 'flex' : 'hidden'} top-0 absolute z-30 bg-gray-800 bg-opacity-40 w-screen h-screen justify-center items-center  transition-all`}>
                 <div className='relative bg-white w-3/4 h-3/4 rounded-2xl shadow-lg'>
                     <div className='w-full bg-gray-200 rounded-t-2xl flex items-center justify-between px-10 py-4'>
                         <h2 className='text-xl font-medium'>Patient Info</h2>
 
-                        <img className='h-6' onClick={closeModal} src="https://img.icons8.com/ios-filled/50/delete-sign--v1.png" alt="" />
+                        <img className='h-6 cursor-pointer hover:scale-95 transition-all' onClick={closeModal} src="https://img.icons8.com/ios-filled/50/delete-sign--v1.png" alt="" />
                     </div>
 
                     <div className='w-full h-[90%] py-6 px-10 flex'>
-                        <div className='w-1/2 h-fit grid grid-cols-2'>
+                        <div className='w-1/2 h-fit grid grid-cols-2 gap-y-6'>
                             <div>
                                 <p className='text-gray-500'>Patient Name</p>
                                 <p className='text-xl font-medium'>{selectedDoc?.firstName} {selectedDoc?.lastName}</p>
@@ -121,8 +145,8 @@ const DocPortal = () => {
                             </div>
 
                             <div className='w-4/5 flex flex-col items-end gap-4'>
-                                <p className='text-gray-500'>Characters Remaining: {selectedDoc?.noteBody ? 500 - selectedDoc.noteBody.length : 500}</p>
-                                <button className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Send <img className='h-6' src="https://img.icons8.com/ios-glyphs/70/ffffff/filled-sent.png" alt="Long arrow" /></button>
+                                <p className='text-gray-500'>Characters Remaining: {selectedDoc?.noteBody ? 250 - selectedDoc.noteBody.length : 500}</p>
+                                <button onClick={sendNote}  className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Send <img className='h-6' src="https://img.icons8.com/ios-glyphs/70/ffffff/filled-sent.png" alt="Long arrow" /></button>
                             </div>
                         </div>
                     </div>
@@ -182,9 +206,9 @@ const DocPortal = () => {
                                 <table className="min-w-full divide-y divide-gray-200">
                                     <thead className="bg-gray-50">
                                         <tr>
+                                        <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Submission Time</th>
                                         <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Patient Name</th>
-                                        <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Time Off Start</th>
-                                        <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Time Off End</th>
+                                        <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Days Off</th>
                                         <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Reasoning</th>
                                         <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Detailed Reasoning</th>
                                         <th scope="col" className="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase">Status</th>
@@ -193,10 +217,10 @@ const DocPortal = () => {
                                     <tbody className="divide-y divide-gray-200">
 
                                     {documents.map((doc) => (
-                                        <tr key={doc.id} onClick={() => handleDocClick(doc)}>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{doc.firstName} {doc.lastName}</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{doc.timeOffStart}</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{doc.timeOffEnd}</td>
+                                        <tr className='cursor-pointer transition-all hover:bg-gray-100' key={doc.id} onClick={() => handleDocClick(doc)}>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{doc.timestamp.toDate().toLocaleString()}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{doc.firstName} {doc.lastName}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{doc.numOfDays}</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{doc.reasoning}</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{doc.detailedReasoning || "N/A"}</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
