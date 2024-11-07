@@ -24,9 +24,9 @@ const ThankYou = () => {
             <Navbar absolute={true} button={false}/>
             <div>
                 <h1 className='mb-5 text-4xl md:text-5xl font-medium text-center'>Your're all set! 🎉✨</h1>
-                <h2 className='mb-9 text-gray-600 text-center text-2xl md:text-3xl'>Your note should be in your email in under 10 mins</h2>
+                <h2 className='mb-9 text-gray-600 text-center text-2xl md:text-3xl'>Your note should be in your email in under 5 mins</h2>
 
-                <p className='text-gray-600 md:text-xl text-center'>If you don't receive an email within 20 mins, <br className='hidden md:block'/> please  call us at (984) 204-7128 or email us at hello@onlinemed.tech</p>
+                <p className='text-gray-600 md:text-xl text-center'>If you don't receive an email within 10 mins, <br className='hidden md:block'/> please  call us at (984) 204-7128 or email us at hello@onlinemed.tech</p>
             </div>
 
             <Footer absolute={true}/>
