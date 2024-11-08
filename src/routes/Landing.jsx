@@ -26,7 +26,7 @@ const Landing = () => {
 
     return (
         <div className='w-screen h-fit relative overflow-hidden px-8 md:px-0'>
-            {/* <img className='w-screen absolute -z-10' loading="lazy" src={bg} alt="Background pattern" /> */}
+            <img className='w-screen absolute -z-10' loading="lazy" src={bg} alt="Background pattern" />
             <Navbar />
 
             {/* Hero */}
