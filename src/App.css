@@ -6,4 +6,5 @@
 /* Then apply the font to elements */
 * {
   font-family: 'Clash Display', 'Helvetica';
+  font-display: swap;
 }
