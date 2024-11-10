@@ -1,14 +1,26 @@
 import React from 'react';
 import {firestore} from '../firebase/firebase';
 import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import {auth} from '../firebase/firebase';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const DocPortal = () => {
     const [documents, setDocuments] = useState([]);
     const [selectedDoc, setSelectedDoc] = useState(null);
+    const [authUser, setAuthUser] = useState(null);
 
     useEffect(() => {
+        const listen = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setAuthUser(user);
+            } else {
+                setAuthUser(null);
+                window.location.href = '/login';
+            }
+        });
+
         const fetchDocuments = async () => {
             const querySnapshot = await getDocs(collection(firestore, 'notes'));
             const docs = [];
@@ -18,6 +30,10 @@ const DocPortal = () => {
             setDocuments(docs);
         };
         fetchDocuments();
+
+        return () => {
+            listen();
+        };
     }, []);
 
     const handleDocClick = (document) => {
@@ -65,7 +81,7 @@ const DocPortal = () => {
                                 <path d="m21 21-4.3-4.3"></path>
                                 </svg>
                             </div>
-                            <input className="py-3 ps-10 pe-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" type="text" role="combobox" aria-expanded="false" placeholder="Type a name" value="" data-hs-combo-box-input=""/>
+                            <input className="py-3 ps-10 pe-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" type="text" role="combobox" aria-expanded="false" placeholder="Type a name" data-hs-combo-box-input=""/>
                         </div>
                     </div>
                 </div>
@@ -170,7 +186,7 @@ const DocPortal = () => {
                                         <path d="m21 21-4.3-4.3"></path>
                                         </svg>
                                     </div>
-                                    <input className="py-3 ps-10 pe-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" type="text" role="combobox" aria-expanded="false" placeholder="Type a name" value="" data-hs-combo-box-input=""/>
+                                    <input className="py-3 ps-10 pe-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" type="text" role="combobox" aria-expanded="false" placeholder="Type a name" data-hs-combo-box-input=""/>
                                 </div>
                             </div>
                         </div>
@@ -183,7 +199,7 @@ const DocPortal = () => {
                             [&:not(:placeholder-shown)]:pb-2
                             autofill:pt-6
                             autofill:pb-2">
-                                <option selected="">Open this select menu</option>
+                                <option>Open this select menu</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
