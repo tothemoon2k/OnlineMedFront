@@ -70,7 +70,7 @@ const DocPortal = () => {
     return (
         <div className='relative w-screen h-fit bg-[#f8faff]'>
             <div className='w-[89%] mx-auto flex justify-between pt-5 pb-6 items-center'>
-                <h1 className='text-2xl font-medium'>Hi Jack 👋</h1>
+                <h1 className='text-2xl font-medium'>Hi Doc 👋</h1>
 
                 <div className="max-w-sm">
                     <div className="relative">
