@@ -32,7 +32,7 @@ const Landing = () => {
             {/* Hero */}
             <section className='w-full flex items-center pt-8 md:pt-16'>
                 <div className='md:w-[60%] md:pl-32 flex flex-col gap-3'>
-                    <h1 className='text-5xl md:text-6xl font-semibold'>Get a Verifiable Doctors Note in Under 8 Mins</h1>
+                    <h1 className='text-5xl md:text-6xl font-medium'>Get a Verifiable Doctors Note in Under 8 Mins</h1>
                     <p className='md:text-lg text-gray-500 pt-1.5 pb-4 md:pb-2.5'>Need a doctors note for work or school? We’re here to help.  Licensed healthcare providers offering real, verifiable excuse notes for workers and students. Quick, reliable, and hassle-free.</p>
                 
                     <div className='flex flex-col md:flex-row gap-4 mb-1.5'>
@@ -58,7 +58,7 @@ const Landing = () => {
 
                 <div className='flex flex-col w-full md:w-1/2'>
                     <p className='text-[#A7C7E7] text-lg'>OUR VALUES</p>
-                    <h2 className='font-semibold text-4xl'>Supporting Workers</h2>
+                    <h2 className='font-medium text-4xl'>Supporting Workers</h2>
 
                     <div className='md:w-5/6 pt-6 flex flex-col gap-7'>
                         <div className='flex flex-col gap-1.5'>
@@ -96,7 +96,7 @@ const Landing = () => {
                 <div className='w-full md:w-1/2 flex justify-end'>
                     <div className='md:w-[90%]'>
                         <p className='text-[#A7C7E7] text-lg'>Advantages</p>
-                        <h2 className='font-semibold text-4xl'>Why Choose OnlineMed?</h2>
+                        <h2 className='font-medium text-4xl'>Why Choose OnlineMed?</h2>
 
                         <div className='pt-7'>
                             <span className='flex items-center gap-4 mb-2'>
@@ -145,8 +145,8 @@ const Landing = () => {
             {/* About Us Section */}
             <section className='mt-24 md:mt-56 w-full h-fit'>
                 <div className='w-full flex flex-col items-center'>
-                    <p className='text-lg'>OUR TEAM</p>
-                    <h2 className='font-semibold text-4xl text-center'>Meet the OnlineMed Team</h2>
+                    <p className='text-lg'>About Us</p>
+                    <h2 className='font-medium text-4xl text-center'>Meet the OnlineMed Team</h2>
                 </div>
 
                 <div className='mt-14 w-full h-fit py-2 md:py-2 rounded-xl grid grid-cols-2 gap-4 lg:grid-cols-3 md:gap-6 md:px-6 justify-center justify-items-center'>
@@ -198,7 +198,7 @@ const Landing = () => {
             <section className='mt-24 md:mt-56 w-full h-fit'>
                 <div className='w-full flex flex-col items-center'>
                     <p className='text-lg'>ABOUT US</p>
-                    <h2 className='font-semibold text-4xl text-center'>Doctor's Note Solutions</h2>
+                    <h2 className='font-medium text-4xl text-center'>Doctor's Note Solutions</h2>
                 </div>
 
                 <div className='w-full flex flex-col md:flex-row pt-10 md:pt-14'>
@@ -219,7 +219,7 @@ const Landing = () => {
             </section>
 
             <section className='mt-24 md:mt-36 mx-auto md:w-4/5 py-40 px-8 md:px-20 bg-black flex flex-col rounded-xl relative overflow-hidden'>
-                <h3 className='text-white text-4xl font-semibold'>Ready To Get Your Note?</h3>
+                <h3 className='text-white text-4xl font-medium'>Ready To Get Your Note?</h3>
                 <p className='mt-4 mb-5 md:mt-3.5 md:mb-4.5 text-lg text-gray-400 md:w-4/6'>Our service ensures you receive a real, verifiable doctor's note in minutes, so you can focus on your recovery without any added stress.</p>
                 <button onClick={handleClick} className='z-10 w-fit bg-white py-3 px-5 rounded-xl font-medium'>Get Your Doctors Note</button>
 
