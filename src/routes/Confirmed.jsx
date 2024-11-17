@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import { Analytics } from '@vercel/analytics/react';
 import {Helmet} from "react-helmet";
 
-const ThankYou = () => {
+const Confirmed = () => {
     return (
         <div className='w-screen h-screen flex flex-col justify-center items-center px-10 relative'>
             <Helmet>
@@ -36,4 +36,4 @@ const ThankYou = () => {
     );
 };
 
-export default ThankYou;
+export default Confirmed;

@@ -7,7 +7,7 @@ import {
 import "./index.css";
 
 import Landing from "./routes/Landing";
-import ThankYou from "./routes/ThankYou";
+import Confirmed from "./routes/Confirmed";
 import Terms from "./routes/Terms";
 import Privacy from "./routes/Privacy";
 import Hipaa from "./routes/Hipaa";
@@ -24,8 +24,8 @@ const router = createBrowserRouter([
     element: <Landing/>,
   },
   {
-    path: "/orderplaced",
-    element: <ThankYou/>,
+    path: "/confirmed",
+    element: <Confirmed/>,
   },
   {
     path: "/team",

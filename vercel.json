@@ -1,6 +1,6 @@
 {
     "routes": [
-      { "src": "/orderplaced", "dest": "/" },
+      { "src": "/confirmed", "dest": "/" },
       { "src": "/team", "dest": "/" },
       { "src": "/faq", "dest": "/" },
       { "src": "/terms", "dest": "/" },
