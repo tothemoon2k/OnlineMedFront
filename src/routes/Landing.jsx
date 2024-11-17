@@ -11,11 +11,11 @@ import star7 from "../../public/assets/star-7.png";
 import cube02 from "../../public/assets/cube-02.png";
 import cube04 from "../../public/assets/cube-04.png";
 import bellicon from "../../public/assets/bellicon.png";
-import doc1 from "../../public/assets/doc1.png";
-import doc2 from "../../public/assets/doc2.png";
-import doc3 from "../../public/assets/doc3.png";
-import doc4 from "../../public/assets/doc4.png";
-import doc5 from "../../public/assets/doc5.png";
+import doc1 from "../../public/assets/doc1.webp";
+import doc2 from "../../public/assets/doc2.webp";
+import doc3 from "../../public/assets/doc3.webp";
+import doc4 from "../../public/assets/doc4.webp";
+import doc5 from "../../public/assets/doc5.webp";
 import nickJones from "../../public/assets/nickjones.png";
 import { handleCtaClick } from '../handleCtaClick';
 

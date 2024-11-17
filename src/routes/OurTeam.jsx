@@ -6,11 +6,11 @@ import Footer from '../components/Footer';
 import bg from "../../public/assets/bg.webp";
 import whiteCircle from "../../public/assets/whiteCircle.png";
 import star7 from "../../public/assets/star-7.png";
-import doc1 from "../../public/assets/doc1.png";
-import doc2 from "../../public/assets/doc2.png";
-import doc3 from "../../public/assets/doc3.png";
-import doc4 from "../../public/assets/doc4.png";
-import doc5 from "../../public/assets/doc5.png";
+import doc1 from "../../public/assets/doc1.webp";
+import doc2 from "../../public/assets/doc2.webp";
+import doc3 from "../../public/assets/doc3.webp";
+import doc4 from "../../public/assets/doc4.webp";
+import doc5 from "../../public/assets/doc5.webp";
 import { handleCtaClick } from '../handleCtaClick';
 
 
