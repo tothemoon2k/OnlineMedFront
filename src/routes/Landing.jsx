@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Analytics } from '@vercel/analytics/react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -21,6 +22,9 @@ import doctorsTalking from "../../public/assets/doctorsTalking.webp";
 import { handleCtaClick } from '../handleCtaClick';
 
 const Landing = () => {
+    <Helmet>
+6       <link rel="preload" as="image" href={bg} />
+7  </Helmet>
     return (
         <div className='w-screen h-fit relative overflow-hidden px-8 md:px-0'>
             <img className='w-screen absolute -z-10' src={bg} alt="Background pattern" />
