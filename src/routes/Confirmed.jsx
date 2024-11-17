@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import Analytics from './Analytics';
 
 const Confirmed = () => {
