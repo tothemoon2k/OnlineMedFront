@@ -17,7 +17,7 @@ import doc3 from "../../public/assets/doc3.webp";
 import doc4 from "../../public/assets/doc4.webp";
 import doc5 from "../../public/assets/doc5.webp";
 import nickJones from "../../public/assets/nickjones.png";
-import doctorsTalking from "../../public/assets/doctors-talking.png";
+import doctorsTalking from "../../public/assets/doctors-talking.webp";
 import { handleCtaClick } from '../handleCtaClick';
 
 const Landing = () => {
