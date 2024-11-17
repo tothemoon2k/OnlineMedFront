@@ -146,6 +146,8 @@ const Faq = () => {
             </section>
 
             <Footer />
+
+            <Analytics/>
         </div>    
     )
 };
