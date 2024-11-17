@@ -1,6 +1,5 @@
 import React from 'react';
-
-const typeformLink = "/redirect";
+import { handleCtaClick } from '../handleCtaClick';
 
 const Navbar = ({ absolute, button }) => {
     return (
@@ -14,7 +13,7 @@ const Navbar = ({ absolute, button }) => {
                 </div>
             </div>
 
-            <a href={typeformLink} className={`${button === false ? 'hidden' : 'hidden md:block'} bg-black text-white py-3 px-5 rounded-xl font-medium`}>Get Your Doctors Note</a>
+            <button onClick={()=>handleCtaClick("navbar")} className={`${button === false ? 'hidden' : 'hidden md:block'} bg-black text-white py-3 px-5 rounded-xl font-medium`}>Get Your Doctors Note</button>
         </nav>
     );
 };

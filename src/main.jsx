@@ -7,7 +7,6 @@ import {
 import "./index.css";
 
 import Landing from "./routes/Landing";
-import Redirect from "./routes/Redirect";
 import ThankYou from "./routes/ThankYou";
 import Terms from "./routes/Terms";
 import Privacy from "./routes/Privacy";
@@ -23,10 +22,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Landing/>,
-  },
-  {
-    path: "/redirect",
-    element: <Redirect/>,
   },
   {
     path: "/orderplaced",

@@ -1,6 +1,5 @@
 {
     "routes": [
-      { "src": "/redirect", "dest": "/" },
       { "src": "/orderplaced", "dest": "/" },
       { "src": "/team", "dest": "/" },
       { "src": "/faq", "dest": "/" },

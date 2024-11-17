@@ -6,7 +6,6 @@ import bg from "../../public/assets/bg.webp";
 import strip from "../../public/assets/strip.png";
 import circles from "../../public/assets/circles.png";
 import whiteCircle from "../../public/assets/whiteCircle.png";
-import standin from "../../public/assets/iphone.png";
 import star05 from "../../public/assets/star-05.png";
 import star7 from "../../public/assets/star-7.png";
 import cube02 from "../../public/assets/cube-02.png";
@@ -18,12 +17,9 @@ import doc3 from "../../public/assets/doc3.png";
 import doc4 from "../../public/assets/doc4.png";
 import doc5 from "../../public/assets/doc5.png";
 import nickJones from "../../public/assets/nickjones.png";
+import { handleCtaClick } from '../handleCtaClick';
 
 const Landing = () => {
-    const handleClick = () => {
-        window.location.href = "/redirect";
-    };
-
     return (
         <div className='w-screen h-fit relative overflow-hidden px-8 md:px-0'>
             <img className='w-screen absolute -z-10' src={bg} alt="Background pattern" />
@@ -36,7 +32,7 @@ const Landing = () => {
                     <p className='md:text-lg text-gray-500 pt-1.5 pb-4 md:pb-2.5'>Need a doctors note for work or school? We’re here to help.  Licensed healthcare providers offering real, verifiable excuse notes for workers and students. Quick, reliable, and hassle-free.</p>
                 
                     <div className='flex flex-col md:flex-row gap-4 mb-1.5'>
-                        <button onClick={handleClick} className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Get Started <img className='h-8' loading="lazy" src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></button>
+                        <button onClick={()=>handleCtaClick("landing-hero")} className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Get Started <img className='h-8' loading="lazy" src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></button>
                         <a href='https://firebasestorage.googleapis.com/v0/b/doctorsnotev2.appspot.com/o/z52n4k?alt=media&token=5517dd91-2805-4287-b727-99c1cf5a084d' className='py-3 px-2 rounded-xl font-medium flex items-center gap-1.5'><img className='h-8' src="https://img.icons8.com/material-rounded/50/play--v1.png" alt="Play" />View a Sample</a>
                     </div>
 
@@ -134,7 +130,7 @@ const Landing = () => {
                         </div>
 
                         <div className='flex flex-col md:flex-row gap-4 mb-1.5 pt-9'>
-                            <button onClick={handleClick} className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Start Your Note <img className='h-8' src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></button>
+                            <button onClick={()=>handleCtaClick("landing-mid-page")} className='flex items-center gap-3 bg-black text-white py-3 px-4 rounded-xl font-medium'>Start Your Note <img className='h-8' src="https://img.icons8.com/windows/50/ffffff/long-arrow-right.png" alt="Long arrow" /></button>
                             <a href='https://firebasestorage.googleapis.com/v0/b/doctorsnotev2.appspot.com/o/z52n4k?alt=media&token=5517dd91-2805-4287-b727-99c1cf5a084d' className='py-3 px-2 rounded-xl font-medium flex items-center gap-1.5'><img className='h-8' src="https://img.icons8.com/material-rounded/50/play--v1.png" alt="Play" />View a Sample</a>
                         </div>
                     </div>
@@ -221,7 +217,7 @@ const Landing = () => {
             <section className='mt-24 md:mt-36 mx-auto md:w-4/5 py-40 px-8 md:px-20 bg-black flex flex-col rounded-xl relative overflow-hidden'>
                 <h3 className='text-white text-4xl font-medium'>Ready To Get Your Note?</h3>
                 <p className='mt-4 mb-5 md:mt-3.5 md:mb-4.5 text-lg text-gray-400 md:w-4/6'>Our service ensures you receive a real, verifiable doctor's note in minutes, so you can focus on your recovery without any added stress.</p>
-                <button onClick={handleClick} className='z-10 w-fit bg-white py-3 px-5 rounded-xl font-medium'>Get Your Doctors Note</button>
+                <button onClick={()=>handleCtaClick("landing-footer")} className='z-10 w-fit bg-white py-3 px-5 rounded-xl font-medium'>Get Your Doctors Note</button>
 
                 <img loading="lazy" className='hidden md:block absolute -top-[60%] -right-[20%] h-[120%] object-cover' src={whiteCircle} alt="White circle designs" />
                 <img loading="lazy" className='hidden md:block absolute -bottom-[75%] -left-[20%] h-[120%] object-cover' src={whiteCircle} alt="White circle designs" />

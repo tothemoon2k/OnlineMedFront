@@ -4,28 +4,17 @@ import { track } from '@vercel/analytics';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import bg from "../../public/assets/bg.webp";
-import strip from "../../public/assets/strip.png";
-import circles from "../../public/assets/circles.png";
 import whiteCircle from "../../public/assets/whiteCircle.png";
-import standin from "../../public/assets/iphone.png";
-import star05 from "../../public/assets/star-05.png";
 import star7 from "../../public/assets/star-7.png";
-import cube02 from "../../public/assets/cube-02.png";
-import cube04 from "../../public/assets/cube-04.png";
-import bellicon from "../../public/assets/bellicon.png";
 import doc1 from "../../public/assets/doc1.png";
 import doc2 from "../../public/assets/doc2.png";
 import doc3 from "../../public/assets/doc3.png";
 import doc4 from "../../public/assets/doc4.png";
 import doc5 from "../../public/assets/doc5.png";
+import { handleCtaClick } from '../handleCtaClick';
 
 
 const OurTeam = () => {
-    const handleClick = () => {
-        track('click-cta');
-        window.location.href = "/redirect";
-    };
-
     return (
         <div className='w-screen h-fit relative overflow-hidden px-8 md:px-0 flex flex-col items-center'>
             <img className='w-screen absolute -z-10' loading="lazy" src={bg} alt="Background pattern" />
@@ -86,7 +75,7 @@ const OurTeam = () => {
             <section className='mt-16 md:mt-28 mx-auto md:w-4/5 py-32 px-8 md:px-20 bg-black flex flex-col rounded-xl relative overflow-hidden'>
                 <h3 className='text-white text-4xl font-semibold'>Ready To Get Your Note?</h3>
                 <p className='mt-4 mb-5 md:mt-2 md:mb-3.5 text-lg text-gray-400'>Our service ensures you receive a legitimate and verifiable note in minutes, so you can focus on your recovery without any added stress.</p>
-                <button onClick={handleClick} className='z-10 w-fit bg-white py-3 px-5 rounded-xl font-medium'>Get Your Doctors Note</button>
+                <button onClick={()=>handleCtaClick("our-team-page")} className='z-10 w-fit bg-white py-3 px-5 rounded-xl font-medium'>Get Your Doctors Note</button>
 
                 <img className='hidden md:block absolute -top-[60%] -right-[20%] h-[120%] object-cover' src={whiteCircle} alt="White circle designs" />
                 <img className='hidden md:block absolute -bottom-[75%] -left-[20%] h-[120%] object-cover' src={whiteCircle} alt="White circle designs" />
