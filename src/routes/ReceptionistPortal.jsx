@@ -112,14 +112,14 @@ const ReceptionistPortal = () => {
 
                             <div className='flex gap-2 items-center h-fit pr-4'>
                                 <div className='bg-green-500 h-4 w-4 rounded-full'></div>
-                                <p className='text-green-500'>Complete</p>
+                                <p className='text-green-500'>{doc.status}</p>
                             </div>
                         </div>
                     ))}
 
                 </div>
 
-                <div className='relative w-full h-fit border border-gray-200 rounded-xl px-12 pb-10'>
+                <div className={selectedDoc ? 'relative w-full h-fit border border-gray-200 rounded-xl px-12 pb-10' : 'hidden'}>
                     <button onClick={()=>setSelectedDoc(null)} className='absolute bg-black p-2.5 rounded-full w-fit h-fit -top-4 -right-3 cursor-pointer transition-all'>
                         <img className='h-5' src="https://img.icons8.com/ios-glyphs/100/ffffff/delete-sign.png" alt="" />
                     </button>
@@ -131,7 +131,7 @@ const ReceptionistPortal = () => {
                         </div>
 
                         <div className='flex flex-col items-end relative'>
-                            <button onClick={handleDropdownClick} className='flex h-fit w-fit items-center gap-1 bg-black text-white py-2.5 px-8 rounded-lg font-medium'>
+                            <button onClick={handleDropdownClick} className='flex h-fit w-fit items-center gap-1 bg-black text-white py-2.5 px-8 rounded-lg font-medium hover:text-gray-200 transition-all'>
                                 Actions <img className='h-4' src="https://img.icons8.com/ios-filled/50/ffffff/menu-2.png" alt="" />
                             </button>
                             {showDropdown && (
@@ -148,15 +148,50 @@ const ReceptionistPortal = () => {
                     </div>
 
                     <div className='pt-8 grid grid-cols-2 gap-y-8'>
+                        <div>
+                            <p className='text-gray-500'>Timestamp</p>
+                            <p className='text-lg font-medium'>{selectedDoc?.timestamp.toDate().toLocaleString()}</p>
+                        </div>
 
-                        {/* Skip first item and map over the rest */}
-                        {patientData.slice(2).map((item, index) => (
-                            <div key={index}>
-                                <p className='text-gray-500'>{item.label}</p>
-                                <p className='text-lg font-medium'>{item.value}</p>
-                            </div>
-                        ))}
+                        <div>
+                            <p className='text-gray-500'>Status</p>
+                            <p className='text-lg font-medium'>{selectedDoc.status}</p>
+                        </div>
 
+                        <div>
+                            <p className='text-gray-500'>Reason</p>
+                            <p className='text-lg font-medium'>{selectedDoc.reasoning} - {selectedDoc.detailedReasoning}</p>
+                        </div>
+                        
+                        <div>
+                            <p className='text-gray-500'>Pronouns</p>
+                            <p className='text-lg font-medium'>{selectedDoc.pronouns}</p>
+                        </div>
+
+                        <div>
+                            <p className='text-gray-500'>Location</p>
+                            <p className='text-lg font-medium'>{selectedDoc.workOrSchool}</p>
+                        </div>
+
+                        <div>
+                            <p className='text-gray-500'>Symptoms</p>
+                            <p className='text-lg font-medium'>{selectedDoc.symptoms}</p>
+                        </div>
+
+                        <div>
+                            <p className='text-gray-500'>Absence Period</p>
+                            <p className='text-lg font-medium'>{selectedDoc.timeOffStart} - {selectedDoc.timeOffEnd}</p>
+                        </div>
+
+                        <div>
+                            <p className='text-gray-500'>Additional Info</p>
+                            <p className='text-lg font-medium'>{selectedDoc?.additionalInfo || "N/A"}</p>
+                        </div>
+
+                        <div>
+                            <p className='text-gray-500'>Contact Email</p>
+                            <p className='text-lg font-medium'>{selectedDoc.email}</p>
+                        </div>
                     </div>
 
                     <div className='mt-7 w-full grid grid-cols-2 gap-4'>
