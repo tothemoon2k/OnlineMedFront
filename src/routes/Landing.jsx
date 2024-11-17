@@ -17,6 +17,7 @@ import doc3 from "../../public/assets/doc3.webp";
 import doc4 from "../../public/assets/doc4.webp";
 import doc5 from "../../public/assets/doc5.webp";
 import nickJones from "../../public/assets/nickjones.png";
+import doctorsTalking from "../../public/assets/doctors-talking.png";
 import { handleCtaClick } from '../handleCtaClick';
 
 const Landing = () => {
@@ -115,7 +116,7 @@ const Landing = () => {
             <section className='mt-24 md:mt-56 w-full h-fit flex flex-col md:flex-row justify-center'>
                 <div className='md:w-2/5 flex justify-center items-center relative'>
                     <img loading="lazy" className='hidden md:block absolute w-full' src={circles} alt="circles" />
-                    <img loading="lazy" className='md:w-[70%] z-10 rounded-2xl' src="https://www.adfinitashealth.com/wp-content/uploads/2024/01/flex-hours.png" alt="" />
+                    <img loading="lazy" className='md:w-[70%] z-10 rounded-2xl' src={doctorsTalking} alt="" />
                 </div>
 
                 <div className='w-full md:w-1/2 flex justify-end'>
