@@ -17,6 +17,7 @@ import OurTeam from "./routes/OurTeam";
 import Faq from "./routes/Faq";
 import DocPortal from "./routes/DocPortal";
 import Login from "./routes/Login";
+import ReceptionistPortal from "./routes/ReceptionistPortal";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "/faq",
     element: <Faq/>,
+  },
+  {
+    path: "/receptionistportal",
+    element: <ReceptionistPortal/>,
   },
   {
     path: "/docportal",
