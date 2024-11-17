@@ -3,7 +3,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { track } from '@vercel/analytics';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import bg from "../../public/assets/bg.png";
+import bg from "../../public/assets/bg.webp";
 import whiteCircle from "../../public/assets/whiteCircle.png";
 import star7 from "../../public/assets/star-7.png";
 
