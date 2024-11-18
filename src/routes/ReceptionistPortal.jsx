@@ -29,6 +29,18 @@ const ReceptionistPortal = () => {
     const handleDropdownClick = () => {
         setShowDropdown(!showDropdown);
     };
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (showDropdown && !event.target.closest('.hs-dropdown-menu') && !event.target.closest('.dropdown-button')) {
+                setShowDropdown(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [showDropdown]);
 
     const patientData = [
         "Jon Bones Jones",
@@ -111,8 +123,8 @@ const ReceptionistPortal = () => {
                             </div>
 
                             <div className='flex gap-2 items-center h-fit pr-4'>
-                                <div className='bg-green-500 h-4 w-4 rounded-full'></div>
-                                <p className='text-green-500'>{doc.status}</p>
+                                <div className={doc.status === "Complete" ? "bg-green-500 h-4 w-4 rounded-full" : doc.status === "Needs Review" ? "bg-red-500 h-4 w-4 rounded-full" : "bg-yellow-500 h-4 w-4 rounded-full"}></div>
+                                <p className={doc.status === "Complete" ? "text-green-500" : doc.status === "Needs Review" ? "text-red-500" : "text-yellow-500"}>{doc.status}</p>
                             </div>
                         </div>
                     ))}
@@ -155,32 +167,35 @@ const ReceptionistPortal = () => {
 
                         <div>
                             <p className='text-gray-500'>Status</p>
-                            <p className='text-lg font-medium'>{selectedDoc.status}</p>
+                            <div className='flex gap-2 items-center h-fit pr-4'>
+                                <div className={selectedDoc?.status === "Complete" ? "bg-green-500 h-4 w-4 rounded-full" : selectedDoc?.status === "Needs Review" ? "bg-red-500 h-4 w-4 rounded-full" : "bg-yellow-500 h-4 w-4 rounded-full"}></div>
+                                <p className={selectedDoc?.status === "Complete" ? "text-green-500" : selectedDoc?.status === "Needs Review" ? "text-red-500" : "text-yellow-500"}>{selectedDoc?.status}</p>
+                            </div>
                         </div>
 
                         <div>
                             <p className='text-gray-500'>Reason</p>
-                            <p className='text-lg font-medium'>{selectedDoc.reasoning} - {selectedDoc.detailedReasoning}</p>
+                            <p className='text-lg font-medium'>{selectedDoc?.reasoning} - {selectedDoc?.detailedReasoning}</p>
                         </div>
                         
                         <div>
                             <p className='text-gray-500'>Pronouns</p>
-                            <p className='text-lg font-medium'>{selectedDoc.pronouns}</p>
+                            <p className='text-lg font-medium'>{selectedDoc?.pronouns}</p>
                         </div>
 
                         <div>
                             <p className='text-gray-500'>Location</p>
-                            <p className='text-lg font-medium'>{selectedDoc.workOrSchool}</p>
+                            <p className='text-lg font-medium'>{selectedDoc?.workOrSchool}</p>
                         </div>
 
                         <div>
                             <p className='text-gray-500'>Symptoms</p>
-                            <p className='text-lg font-medium'>{selectedDoc.symptoms}</p>
+                            <p className='text-lg font-medium'>{selectedDoc?.symptoms}</p>
                         </div>
 
                         <div>
                             <p className='text-gray-500'>Absence Period</p>
-                            <p className='text-lg font-medium'>{selectedDoc.timeOffStart} - {selectedDoc.timeOffEnd}</p>
+                            <p className='text-lg font-medium'>{selectedDoc?.timeOffStart} - {selectedDoc?.timeOffEnd}</p>
                         </div>
 
                         <div>
@@ -190,7 +205,7 @@ const ReceptionistPortal = () => {
 
                         <div>
                             <p className='text-gray-500'>Contact Email</p>
-                            <p className='text-lg font-medium'>{selectedDoc.email}</p>
+                            <p className='text-lg font-medium'>{selectedDoc?.email}</p>
                         </div>
                     </div>
 
