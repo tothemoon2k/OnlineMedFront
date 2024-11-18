@@ -14,11 +14,11 @@ const Confirmed = () => {
 
     return (
         <div className='w-screen h-screen flex flex-col justify-center items-center px-10 relative'>
-            <LiveChatWidget
+            {/* <LiveChatWidget
                 license="18883233"
                 visibility="minimized"
                 onNewEvent={handleNewEvent}
-            />
+            /> */}
 
             <Helmet>
                 <script type="text/javascript">
