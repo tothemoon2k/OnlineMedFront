@@ -18,7 +18,7 @@ const Faq = () => {
                 You ask... <br className="hidden md:block" /> we answer!
             </h1>
             <p className="mt-3 md:text-lg md:text-center">
-                Every answer you need, minus the endless searching. <br />If your question is not answered here, please email us at <span className='text-blue-600 font-medium'>hello@onlinemed.tech</span>.
+                Every answer you need, minus the endless searching. <br />If your question is not answered here, please email us at <span className='text-blue-600 font-medium'>support@onlinemed.tech</span>.
             </p>
 
             <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
