@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics, track } from '@vercel/analytics/react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import bg from "../../public/assets/bg.webp";
@@ -26,6 +26,8 @@ const Landing = () => {
     const [showingBanner, setShowingBanner] = useState(true);
 
     const handleApplyBtn = () => {
+        track('doc-open-apply');
+
         window.location.href = "mailto:hiring@onlinemed.tech?subject=Physician Telehealth Opportunities - OnlineMed";
     }
 
