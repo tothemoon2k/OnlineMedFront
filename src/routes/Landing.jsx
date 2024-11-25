@@ -26,7 +26,7 @@ const Landing = () => {
     const [showingBanner, setShowingBanner] = useState(true);
 
     const handleApplyBtn = () => {
-        track('doc-open-apply');
+        track('apply_click');
 
         window.location.href = "mailto:hiring@onlinemed.tech?subject=Physician Telehealth Opportunities - OnlineMed";
     }
